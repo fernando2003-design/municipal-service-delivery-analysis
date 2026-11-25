@@ -2,19 +2,21 @@
 
 ## 1. Project Overview
 
-This project investigates differences in basic municipal service delivery across South African municipalities.
+This project investigates differences in basic municipal service delivery across South African municipalities using data from Statistics South Africa's Non-Financial Census of Municipalities (P9115).
 
-It aims to analyse municipal service delivery indicators, identify potential service delivery gaps, and highlight municipalities that may require further investigation and prioritisation.
+The project aims to identify service delivery disparities, examine historical trends, and highlight areas that may require further investigation and prioritisation.
 
-The analysis will use SQL and PostgreSQL for data management and analysis, and Microsoft Power BI for data visualisation and dashboard development.
+SQL and PostgreSQL will be used for data management and analysis, while Microsoft Power BI will be used for data visualisation and dashboard development.
 
 ## 2. Project Objectives
 
 - Examine municipal service delivery indicators across South Africa.
-- Compare service delivery patterns between municipalities and provinces.
-- Investigate differences in household service access relative to population.
-- Develop a transparent Service Delivery Gap Index using carefully defined indicators.
-- Identify municipalities that warrant further investigation and possible intervention.
+- Compare service delivery patterns across municipalities, districts and provinces, subject to available geographic detail.
+- Analyse changes in municipal service delivery between 2022 and 2023.
+- Investigate historical provincial service delivery trends from 2006 to 2023.
+- Examine electricity, water, sanitation and solid waste management indicators.
+- Develop a transparent Service Delivery Gap Index, subject to the availability of suitable indicators.
+- Identify areas that warrant further investigation and possible intervention.
 
 ## 3. Tools and Technologies
 
@@ -23,52 +25,82 @@ The analysis will use SQL and PostgreSQL for data management and analysis, and M
 - SQL
 - Visual Studio Code
 - Microsoft Power BI Desktop
+- Microsoft Excel
 - Git and GitHub
 
-## 4. Planned Data Sources
+## 4. Data Sources
 
-- Statistics South Africa: Non-Financial Census of Municipalities (P9115).
-- Statistics South Africa: Census 2022 household and population data.
-- Municipal Demarcation Board: municipality codes and reference information.
+Statistics South Africa: Non-Financial Census of Municipalities (P9115).
+
+The project uses the following source files:
+
+- `unit data by province and district_2022_2023.xlsx`
+- `mainP91152023.PDF`
+- `p9115_Time series 2006 - 2023_by province_final.xlsx`
+
+The official statistical publication will be used to understand indicator definitions, methodology and data limitations.
 
 ## 5. Project Structure
 
 ```text
 Municipal_Service_Delivery_Analysis/
-
- data
- sql
- results
- documentation
- powerbi
-README.md
+-data
+   raw       
+     P9115
+-sql
+-results
+-documentation
+-powerbi
+- README.md
 ```
 
 ## 6. Expected Deliverables
 
 - Cleaned and documented municipal datasets.
 - SQL scripts for data preparation and analysis.
-- Municipal and provincial comparisons.
-- A documented Service Delivery Gap Index.
+- Municipal, district and provincial comparisons, where supported.
+- Historical service delivery trend analysis.
+- A documented Service Delivery Gap Index, where methodologically feasible.
 - An interactive Power BI dashboard.
+- Analytical findings and recommendations.
 - Project documentation and methodology notes.
 
 ## 7. Methodological Considerations
 
-All indicators will be assessed according to their definitions, units of measurement, and available denominators before comparisons are made.
+All indicators will be assessed according to their definitions, units of measurement, geographic coverage and available denominators before comparisons are made.
 
-Census 2022 household-based indicators will be the primary measures used to assess service delivery gaps, provided that the relevant definitions and denominators are suitable.
+P9115 measures municipal-reported service delivery statistics. Consumer units will not automatically be treated as equivalent to households or individuals.
 
-P9115 municipal statistics will provide additional context. Its consumer units or billing units will not be treated as directly equivalent to Census households or individuals, as the two sources use different statistical units and reporting methods.
+The analysis will distinguish between reported service delivery quantities and actual household-level access.
 
-Population size will be considered separately when identifying the potential scale of service delivery gaps. It will not automatically be incorporated into the Service Delivery Gap Index.
+Absolute service delivery quantities will not automatically be interpreted as measures of municipal performance, as municipalities differ in size and service responsibilities.
 
-The analysis will distinguish between reported service delivery quantities and household-level access. Findings will be interpreted cautiously, and limitations in the available data will be documented.
+The 2022 P9115 figures are revised, while the 2023 figures are preliminary. These distinctions will be retained throughout the analysis.
 
-The 2022 P9115 figures are revised, while the 2023 figures are preliminary. These distinctions will be retained in the analysis.
+Historical provincial data will be analysed separately from more geographically detailed data where appropriate.
+
+The Service Delivery Gap Index will only be developed if the available indicators support meaningful and defensible comparisons.
+
+All identified data limitations, assumptions and methodological decisions will be documented.
 
 ## 8. Project Status
 
-Initial software installation, database setup, Git configuration, GitHub repository creation, and project folder structure have been completed.
+Completed:
 
-Data acquisition, validation, preparation, analysis, and dashboard development are upcoming stages.
+- Software installation and configuration.
+- PostgreSQL database setup.
+- Git and GitHub configuration.
+- GitHub repository creation.
+- Project folder structure.
+- Initial data acquisition.
+- Project scope definition.
+
+Upcoming:
+
+- Data inspection and validation.
+- Data cleaning and preparation.
+- PostgreSQL data import.
+- Exploratory data analysis.
+- Indicator development.
+- Power BI dashboard development.
+- Final findings and documentation.
